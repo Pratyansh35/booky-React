@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "Think like a Monk",
+      "author": "Jay Shetty",
+      "description": "The secret of how to harness the power of positivity and be happy now.",
+      "price": 190,
+      "discountPrice": 380,
+      "image": "card1"
+    },
+    {
+      "id": 2,
+      "name": "Fifty Shades of Grey",
+      "author": "E. L. James",
+      "description": "British-American film trilogy series that consists of three erotic romantic drama films.",
+      "price": 75,
+      "discountPrice": 150,
+      "image": "card2"
+    },
+    {
+      "id": 1,
+      "name": "S.L Arora",
+      "author": "S.L Arora",
+      "description": "a short line about the cloth..",
+      "price": 480,
+      "discountPrice": 960,
+      "image": "card3"
+    },
+    {
+      "id": 2,
+      "name": "R.D. Sharma",
+      "author": "R.D. Sharma",
+      "description": "a short line about the cloth..",
+      "price": 250,
+      "discountPrice": 500,
+      "image": "card4"
+    },
+    {
+      "id": 3,
+      "name": "Jerome k. Jerome",
+      "author": "Jerome k. Jerome",
+      "description": "a short line about the cloth..",
+      "price": 200,
+      "discountPrice": 400,
+      "image": "card5"
+    },
+    {
+      "id": 4,
+      "name": "Robin Sharma",
+      "author": "Robin Sharma",
+      "description": "a self-help book by Robin Sharma, a writer and motivational speaker.",
+      "price": 150,
+      "discountPrice": 300,
+      "image": "card6"
+    },
+    {
+      "id": 5,
+      "name": "Thomas A.",
+      "author": "Thomas A.",
+      "description": "The complete-reference-html-css-fifth-edition",
+      "price": 40,
+      "discountPrice": 80,
+      "image": "card7"
+    },
+    {
+      "id": 6,
+      "name": "Margaret",
+      "author": "Margaret",
+      "description": "Gone With the Wind-winner of the Pulitzer Prize and one of the bestselling",
+      "price": 100,
+      "discountPrice": 200,
+      "image": "card8"
+    }
+  ]
+  
