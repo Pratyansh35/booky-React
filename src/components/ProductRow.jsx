@@ -27,7 +27,7 @@ const ProductRow = ({ product }) => {
             </div>
             <div className="col-md-3 product-price d-flex align-items-center justify-content-end">
                 <div className="price-wrapper">
-                    <span className="original-price">${product.price}</span>
+                    <h5 className=" m-0">${product.price}</h5>
                     <span className="discounted-price">
                         <del>${product.discountPrice}</del>
                     </span>

@@ -3,7 +3,7 @@ import React,{useEffect, useState} from 'react';
 import Footer from '../components/footer';
 import Nav from '../components/nav';
 import ProductList from '../components/productList';
-import Middle from './middle';
+import Middle from '../components/middle';
 
 function Home() {
     const [cartItems, setCartItems] = useState([]);
