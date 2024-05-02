@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import ProductCard from './productCard';
 import productsData from '../data/products.json';
 import arrow from '../assets/arrow.png';
 
-function ProductList() {
+function ProductList({ setCartItems }) {
   const productContainerRef = useRef(null);
 
   useEffect(() => {
@@ -35,11 +36,15 @@ function ProductList() {
       <button className="nxt-btn"><img src={arrow} alt="" /></button>
       <div className="product-container" ref={productContainerRef}>
         {productsData.map(product => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} setCartItems={setCartItems} />
         ))}
       </div>
     </section>
   );
 }
+
+ProductList.propTypes = {
+  setCartItems: PropTypes.func.isRequired // Add PropTypes validation
+};
 
 export default ProductList;

@@ -9,6 +9,8 @@ const DonateBookForm = () => {
         contactInfo: ''
     });
 
+    const [donationSuccess, setDonationSuccess] = useState(false); 
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -21,12 +23,16 @@ const DonateBookForm = () => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         
+        // Reset form data
         setFormData({
             title: '',
             author: '',
             condition: '',
             contactInfo: ''
         });
+
+        // Show success message
+        setDonationSuccess(true);
     };
 
     return (
@@ -66,6 +72,7 @@ const DonateBookForm = () => {
                             </div>
                             <button type="submit" className="btn btn-primary">Donate</button>
                         </form>
+                        {donationSuccess && <p className="text-success mt-3">You have successfully donated a book!</p>}
                     </div>
                 </div>
             </div>

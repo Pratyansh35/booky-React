@@ -14,10 +14,10 @@ function Home() {
   }, []);
     return (
         <>
-            <Nav cartItems={cartItems}/>
-            <ProductList />
+            <Nav cartItems={cartItems} setCartItems={setCartItems}/>
+            <ProductList setCartItems={setCartItems}/>
             <Middle/>
-            <ProductList />
+            <ProductList setCartItems={setCartItems}/>
             <Footer />
         </>
     );

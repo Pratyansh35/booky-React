@@ -1,16 +1,15 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import darklogo from '../assets/dark-logo.png';
 import lightLogo from '../assets/light-logo.png';
-import { Link ,useNavigate} from 'react-router-dom';
-function Nav(cartItems) {
-  const [cartItem, setCartItem] = useState([]);
-
-    useEffect(() => {
-        const storedCartItem = JSON.parse(localStorage.getItem('cartItems')) || [];
-    setCartItem(storedCartItem);
-  }, []);
+import { Link} from 'react-router-dom';
+function Nav({cartItems, setCartItems}) {
+  function clrCart(){
+    setCartItems([]);
+    localStorage.clear();
+  }
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ position: 'sticky', top: 0, left: 0, zIndex: 9, display: 'block' }}>
@@ -29,17 +28,18 @@ function Nav(cartItems) {
                   Cart<span className="badge badge-light">{cartItems.length}</span>
                 </button>
                 <ul className="dropdown-menu">
-                  {cartItems.cartItems.map((item, index) => (
+                  {cartItems.map((item, index) => (
                     <li key={index} className="dropdown-item">{item.name} - ₹{item.price}</li>
                   ))}
+                  <li className="btn dropdown-item btn-primary" onClick={clrCart}>delete all</li>
                 </ul>
               </li>
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li className="nav-item">
-                {/* <a className="nav-link" href="#"></span> </a> */}
-                <li><Link  to="/cart" className="nav-link">Order {cartItem.length} </Link></li>
+                
+                <li><Link  to="/cart" className="nav-link">Order {cartItems.length} </Link></li>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,5 +78,8 @@ function Nav(cartItems) {
     </>
   );
 }
-
+Nav.propTypes = {
+  cartItems: PropTypes.array.isRequired, 
+  setCartItems: PropTypes.func.isRequired 
+};
 export default Nav;

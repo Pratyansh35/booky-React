@@ -13,7 +13,7 @@ const imageMap = {
   card1, card2, card3, card4, card5, card6, card7, card8
 };
 
-function ProductCard({ product }) {
+function ProductCard({ product, setCartItems }) {
   const { id, name, author, description, price, discountPrice, image } = product;
   const imagePath = imageMap[image]; 
   const handleAddToCart = () => {
@@ -29,6 +29,7 @@ function ProductCard({ product }) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.push(cartItem);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    setCartItems(cartItems);
   };
 
   return (
@@ -57,6 +58,7 @@ ProductCard.propTypes = {
     discountPrice: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
+  setCartItems: PropTypes.func.isRequired,
 };
 
 export default ProductCard;
